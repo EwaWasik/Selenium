@@ -1,0 +1,47 @@
+import org.testng.annotations.Test;
+import static org.testng.Assert.*;
+
+public class CalculatorTest {
+
+    //dane wejściowe
+    private final int firtsNumber = 2;
+    private final int secondNumber = 3;
+
+    Calculator calculator= new Calculator();
+
+    //oczekiwane rezultaty
+
+    private int correctExpectedResult = 5;
+    private int incorrectExpectedResult = 6;
+
+
+    @Test
+    public void testCase1(){
+        int actualResult = calculator.add(firtsNumber,secondNumber);
+        assertTrue(actualResult==correctExpectedResult);
+    }
+    @Test
+    public void testCase2(){
+        int actualResult = calculator.add(firtsNumber,secondNumber);
+        assertFalse(actualResult==incorrectExpectedResult);
+
+    }
+
+    @Test
+    public void testCase3(){
+        int actualResult = calculator.add(firtsNumber,secondNumber);
+        assertEquals(actualResult,correctExpectedResult);
+    }
+}
+
+
+//w osobnej klasie
+/*public class Calculator {
+
+    public int add(int a, int b) {
+        int result = a + b;
+        return result;
+    }
+
+}
+*/
